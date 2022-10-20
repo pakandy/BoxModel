@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SYST10049-Box Model</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+      integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" 
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs.min.css">
+
+<style>
+body {
+  padding-top: 0.2em;
+}
+body {
+  /* Set "figure-counter" to 0 */
+  counter-reset: figure-counter;
+}
+figcaption::before {
+  /* Increment "figure-counter" by 1 */
+  counter-increment: figure-counter;
+  content: "FIGURE " counter(figure-counter) ". ";
+  font-weight: bold;
+}
+h2 { 
+  padding-top:20px; 
+  background-color: orange; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top right, orange, orange, white, white, white, white, white); /* Standard syntax (must be last) */
+  }
+h3 { 
+  padding-top:20px; 
+  background-color: orange; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top right, orange, white, white, white, white, white); /* Standard syntax (must be last) */
+  } 
+@media (max-width: 1200px) {
+  .container {
+    width: 100% !important;
+  }
+}
+.item {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+code {
+  color: teal;
+  font-weight: bold;
+}
+nav > a {
+  display: block;
+}
+a {
+  color: #FF9900;
+  font-weight: 500;
+}
+.secondary {
+  color: gray;
+  margin: 0;
+  padding: 0 0 0 40px;
+  font-size: 0.9em;
+  display: block;
+  font-weight: 500;
+}
+.sub-menu-item {
+  color: gray;
+  margin: 0;
+  padding: 0 0 0 62px;
+  font-size: 0.8em;
+  display: block;
+  font-weight: 400;
+}
+hr {
+	border: 0;
+  padding: 0 auto;
+  margin: 33px auto 6px;
+	height: 3px;
+	background-image: -webkit-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0)); 
+	background-image:    -moz-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+	background-image:     -ms-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+	background-image:      -o-linear-gradient(left, rgba(190,190,190,0), rgba(190,190,190,0.75), rgba(190,190,190,0));
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary:before {
+  content: "\2b9e"; /* the new icon  ≡\2714*/
+  color: gray;
+  margin-right: 5px;
+}
+details[open] summary:before {
+  content: "\2b9f"; /* the new icon  "∧› ⚊ ⋮ " */
+	color: lightgray;
+}
+
+figure {
+  max-width: 800px;
+  padding-left: 5px;
+  border: 3px solid;
+  border-image-source: linear-gradient(70deg, lightblue, white, white, white);
+  border-image-slice: 1;
+}
+.eeb-border-quote { border-left: 3px solid darkorange;padding-left:6px; }
+.col3 {column-count: 3}
+
+iframe {
+  width:100%;
+  height:124px;
+  border: none;
+  border-bottom:1px dotted lightblue;
+  border-top: 1px dotted lightblue;
+}
+abbr { cursor: help; }
+samp:before {
+  content: '<';
+}
+samp:after {
+  content: '>';
+}
+samp {
+  font-family: monospace;
+  color: teal;
+  font-size: 1.2em;
+}
+[data-ref-link] {
+  color: darkred;
+}
+img { width: 70%; }
+</style>    
+  </head>
+</head>
+<body>
+<main class="container">
+<h2>Cascading Style Sheets (CSS)</h2>
+<section id="page32">
+  <h3>CSS Box Model</h3>
+  <p>All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
+  <footer class="blockquote-footer">Read further <cite title="www.w3schools.com/css/css_boxmodel.asp"><a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank" rel="noopener">w3schools.com</a></cite></footer><hr>
+  <p><img src="./images/boxModel.png" style="width:37em; height:32em;"></p>
+  <dl class="row">
+  <dt class="col-sm-1">Content</dt>
+  <dd class="col-sm-11">The area where your content is displayed, which can be sized using properties like <strong>width</strong> and <strong>height</strong>.</dd>
+  <dt class="col-sm-1">Padding</dt>
+  <dd class="col-sm-11">The padding sits around the content as white space; its size can be controlled using <strong>padding</strong> and related properties.</dd>
+  <dt class="col-sm-1">Border</dt>
+  <dd class="col-sm-11">The border box wraps the content and any padding. Its size and style can be controlled using <strong>border</strong> and related properties.</dd>
+  <dt class="col-sm-1">Margin</dt>
+  <dd class="col-sm-11">The margin is the outermost layer, wrapping the content, padding and border as whitespace between this box and other elements. Its size can be controlled using <strong>margin</strong> and related properties.</dd>
+  </dl>
+  <p>The <strong>full size</strong> (width/height) of an element <strong>=</strong> the (width/height> of the <strong>content</strong> + <strong>padding</strong> + <strong>border</strong> + <strong>margin</strong></p>
+  <p>Please be reminded that the <strong>margin, padding, and border</strong> need to consider the spaces <strong>at the top & bottom; and left & right of the content.</strong></p>
+  <figure>
+    <pre class="language-css" style="margin: 0; height: 360px;"><code style="margin: -10px; ">
+    &lt;style&gt;
+    main {
+      width: 200px;                /* content */
+      padding: 15px;               /* padding */
+      border: 3px solid black;     /* border */
+      margin: 0px;                 /* margin */
+    }
+    &lt;/style&gt;
+    &lt;body&gt;
+    &lt;img src='./images/sheridan.jpeg' width='236px; height: 200px;'&gt;
+    &lt;main&gt;-----------This is Main-----------&lt/main&gt;
+    &lt;/body&gt;
+  </code>
+  <span style='font-weight: bold; color: red;'>The full width of main = 200px + 2*15px + 2*3px + 2*0px = 236px.</span><br>
+  </pre>
+  </figure>
+  <iframe style="width: 40%; height: 220px; border: 1px dotted blue;" srcdoc=
+    "&lt;style&gt;
+    main {
+      width: 200px;        /* content */
+      padding: 15px;       /* padding */
+      border: 3px solid black;         /* border */
+      margin: 0px;         /* margin */
+    }
+    &lt;/style&gt;
+    &lt;body&gt;
+    &lt;img src='./images/sheridan.jpeg' width='236px; height: 200px;'&gt;
+    &lt;main&gt;-----------This is Main-----------&lt/main&gt;
+    &lt;/body&gt;"></iframe>
+    <figcaption>CSS Box Model.</figcaption><hr>
+
+  <h5>Margin Collapse</h5>
+  <p>Margin collapse occurs when <b>vertically adjacent margins of block-level elements collide to share a general margin space</b>.<br>The size of this shared space is dictated by the <b>element with the larger margin</b>.</p>
+  <p>Margin collapse does not apply to vertical margins, floating and absolutely positioned elements.</p>
+  <p>Explore more&mdash; <a href="https://www.w3schools.com/css/css_margin_collapse.asp" target="_blank" rel="noopener">w3schools.com</a></p>
+  <hr>
+  <h5>Shorthand properties</h5>
+  <p>Use the sequence <em style="color:darkorange; font-weight: bold;">TRBL (TRouBLe, clockwise)</em> to specify values for the block sides; applies to properties <code>margin</code> and <code>padding</code>.</p>
+  <dl class="row">
+    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T R B L;</span></dt>
+    <dd class="col-sm-3">margin: 4px 10px 5px 2px;</dd>
+    <dd class="col-sm-7">margin-top: 4px; margin-right 10px; margin-bottom: 5px; margin-left: 2px;</dd>
+    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T L/R B;</span></dt>
+    <dd class="col-sm-3">margin: 5px 10px 2px;</dd>
+    <dd class="col-sm-7">margin-top: 5px; margin-right 10px; margin-bottom: 2px; margin-left: 10px;</dd>
+    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T/B L/R;</span></dt>
+    <dd class="col-sm-3">margin: 3px 5px;</dd>
+    <dd class="col-sm-7">margin-top: 3px; margin-right 5px; margin-bottom: 3px; margin-left: 5px;</dd>
+    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T/R/B/L;</span></dt>
+    <dd class="col-sm-3">margin: 8px;</dd>
+    <dd class="col-sm-7">margin-top: 8px; margin-right 8px; margin-bottom: 8px; margin-left: 8px;</dd>
+  </dl>
+  <p>There are other shorthand properties, such as <code>border</code>, <code>outline</code>, <code>font</code>, <code>background</code>, etc.</p>
+  <hr>
+  <h5>Inline vs. block behaviour</h5>
+  <p>The display property specifies the display behavior (the type of rendering box) of an element. In HTML, the default display property value is taken from the HTML specifications or from the browser and user default style sheet.</p>
+  <dl class="row">
+  <dt class="col-sm-2">inline</dt>
+  <dd class="col-sm-10">Displays an element as an inline element (like &lt;span&gt;). Any height and width properties will have no effect</dd>
+  <dt class="col-sm-2">block</dt>
+  <dd class="col-sm-10">Displays an element as a block element (like &lt;p&gt;). It starts on a new line, and takes up the whole width</dd>
+  </dl>
+  <footer>Explore more&mdash; <a href="https://www.w3schools.com/cssref/pr_class_display.asp" target="_blank" rel="noopener">w3schools.com</a></footer>
+  
+</section>
+<hr /><footer class="container">
+<div class="xsmall fa fa-copyright" style="padding: 1% 13%; text-align: center;"><em>This work is the intellectual property of Sheridan College. Any further copying and distribution outside of class must be within the copyright law. Posting to commercial sites for profit is prohibited.</em></div>
+<address style="text-align: center;">SYST10049 Web Programming |&nbsp;Sheridan College</address></footer></main><!-- Optional JavaScript -->
+<p></p>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<p>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/htmlbars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/markdown.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre code').forEach((block) => {
+    hljs.highlightBlock(block); 
+  });
+});
+(function () {
+  'use strict'
+
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.head.appendChild(msViewportStyle)
+  }
+
+}())    
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</p>
+</body>
+</html>
