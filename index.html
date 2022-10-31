@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SYST10049-Box Model</title>
+<title>SYST10049-Values Units</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Bootstrap CSS -->
@@ -21,11 +21,9 @@ body {
   padding-top: 0.2em;
 }
 body {
-  /* Set "figure-counter" to 0 */
   counter-reset: figure-counter;
 }
 figcaption::before {
-  /* Increment "figure-counter" by 1 */
   counter-increment: figure-counter;
   content: "FIGURE " counter(figure-counter) ". ";
   font-weight: bold;
@@ -134,98 +132,106 @@ samp {
 [data-ref-link] {
   color: darkred;
 }
-img { width: 70%; }
-</style>    
-  </head>
+.org { color: rgb(224,97,0); }
+</style>
 </head>
 <body>
 <main class="container">
 <h2>Cascading Style Sheets (CSS)</h2>
-<section id="page32">
-  <h3>CSS Box Model</h3>
-  <p>All HTML elements can be considered as boxes. In CSS, the term "box model" is used when talking about design and layout. The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.</p>
-  <footer class="blockquote-footer">Read further <cite title="www.w3schools.com/css/css_boxmodel.asp"><a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank" rel="noopener">w3schools.com</a></cite></footer><hr>
-  <p><img src="./images/boxModel.png" style="width:37em; height:32em;"></p>
-  <dl class="row">
-  <dt class="col-sm-1">Content</dt>
-  <dd class="col-sm-11">The area where your content is displayed, which can be sized using properties like <strong>width</strong> and <strong>height</strong>.</dd>
-  <dt class="col-sm-1">Padding</dt>
-  <dd class="col-sm-11">The padding sits around the content as white space; its size can be controlled using <strong>padding</strong> and related properties.</dd>
-  <dt class="col-sm-1">Border</dt>
-  <dd class="col-sm-11">The border box wraps the content and any padding. Its size and style can be controlled using <strong>border</strong> and related properties.</dd>
-  <dt class="col-sm-1">Margin</dt>
-  <dd class="col-sm-11">The margin is the outermost layer, wrapping the content, padding and border as whitespace between this box and other elements. Its size can be controlled using <strong>margin</strong> and related properties.</dd>
-  </dl>
-  <p>The <strong>full size</strong> (width/height) of an element <strong>=</strong> the (width/height> of the <strong>content</strong> + <strong>padding</strong> + <strong>border</strong> + <strong>margin</strong></p>
-  <p>Please be reminded that the <strong>margin, padding, and border</strong> need to consider the spaces <strong>at the top & bottom; and left & right of the content.</strong></p>
-  <figure>
-    <pre class="language-css" style="margin: 0; height: 360px;"><code style="margin: -10px; ">
+<!-- 10.5. CSS3 Values and Units Module  -->
+<section id="page15">
+<h3>CSS3 Values and Units Module</h3>
+<p>This CSS module describes the common values and units that CSS properties accept and the syntax used for describing them in CSS property definitions.</p>
+<a class="btn btn-outline-secondary btn-block" style="cursor: pointer;" target="_blank" role="button" href="https://www.w3.org/TR/css3-values/" rel="noopener"> Read more&mdash; W3C specifications </a><hr />
+<h4>CSS values</h4>
+<p>CSS values are set against CSS Properties and reside within CSS declaration block.  The value definition for each CSS property can be different depending on the type of the CSS property.</p>
+<p>CSS values can be keywords such as auto, collapse, initial, etc.; data types such as string, numeric, percentage, url, etc.</p>
+<p>For example:</p>
+<ul style="margin:-20px 0;">
+  <li><strong>color</strong>: initial / inherit / &lt;<em>color, such as red</em>&gt;;</li>  
+  <li><strong>width</strong>: auto / initial / inherit / &lt;<em>numeric, such as 150px</em>&gt; / &lt;<em>percentage, such as 50%</em>&gt;;</li>
+  <li><strong>border-collapse</strong>: separate / collapse / initial / inherit;</li>
+</ul><hr>
+<h4>CSS units</h4>
+<p>For numeric data type there are also different units.  We'll look at some units used to define CSS sizes for dimension and distance.</p>
+<p><strong>pt</strong> versus <strong>px</strong> versus <strong>em</strong> versus <strong>rem</strong> verse <strong>percentage (%)</strong></p>
+<ul>
+  <li><strong>Points (pt)</strong>: Points are traditionally used in print media (anything that is printed on paper, etc.). One point is equal to 1/72 of an inch. Points are <i>fixed-size</i> units and cannot scale in size.</li>
+  <li><strong>Pixels (px)</strong>: Pixels are, similar to Points, <i>fixed-size</i> units that are used in screen media (i.e. to be read on the computer screen). One pixel is equal to one dot on the computer screen (the smallest division of your screen’s resolution). One problem with the pixel unit is that it does not scale. The elements defined using pixels will look different on another device with lower or higher resolution.</li>
+  <li><strong>"Ems" (em)</strong>: An em is equal to the font-size of the <strong class="org">element</strong> (or the font-size of its nearest parent element), for instance, if the font-size of the element is 16px, 1em is equal to 16px. Ems are <i>scalable</i> in nature, so 2em would equal 32px, .5em would equal 8px, etc.  So, the elements will look the same on different devices regardless of their resolution.</li>
+  <li><strong>"Rems" (rem)</strong>: An rem is equal to the font-size of the <strong class="org">root element</strong>, for instance, if the font-size of the root element is 16px, 1rem is equal to 16px. Rems are <i>scalable</i> in nature, so 2rem would equal 32px, .5rem would equal 8px, etc.  So, the elements will look the same on different devices regardless of their resolution.</li>
+  <li><strong>Percent (%)</strong>: The percentage, similiar to the Em and Rem, is <i>scalable</i>.  If you set an element's font size as a percentage it will be a percentage of the font size of the <strong class="org">parent element</strong>.</li>
+</ul>
+<footer class="blockquote-footer">Read further <a href="https://www.w3schools.com/cssref/css_units.asp" target="_blank" rel="noopener">  CSS Units (W3schools.com) </a><hr />
+</footer><hr>
+<figure>
+  <pre class="language-html" style="margin: 0; height: 600px;"><code>
     &lt;style&gt;
-    main {
-      width: 200px;                /* content */
-      padding: 15px;               /* padding */
-      border: 3px solid black;     /* border */
-      margin: 0px;                 /* margin */
-    }
+      html { font-size: 16px; color: blue; }
+      p { font-size: 32px; color: rgb(224, 97, 0); }
+      div {
+        font-size: 2em; color:rgb(224, 97, 0);
+        border: 1px solid black;
+      }
+      span { font-size: 0.5em; color: blue;}
+      .half { font-size: 1rem; }
+      section { font-size: 200%; color:rgb(224, 97, 0); border: 1px solid; }
     &lt;/style&gt;
-    &lt;body&gt;
-    &lt;img src='./images/sheridan.jpeg' width='236px; height: 200px;'&gt;
-    &lt;main&gt;-----------This is Main-----------&lt/main&gt;
-    &lt;/body&gt;
-  </code>
-  <span style='font-weight: bold; color: red;'>The full width of main = 200px + 2*15px + 2*3px + 2*0px = 236px.</span><br>
-  </pre>
-  </figure>
-  <iframe style="width: 40%; height: 220px; border: 1px dotted blue;" srcdoc=
-    "&lt;style&gt;
-    main {
-      width: 200px;        /* content */
-      padding: 15px;       /* padding */
-      border: 3px solid black;         /* border */
-      margin: 0px;         /* margin */
-    }
-    &lt;/style&gt;
-    &lt;body&gt;
-    &lt;img src='./images/sheridan.jpeg' width='236px; height: 200px;'&gt;
-    &lt;main&gt;-----------This is Main-----------&lt/main&gt;
-    &lt;/body&gt;"></iframe>
-    <figcaption>CSS Box Model.</figcaption><hr>
 
-  <h5>Margin Collapse</h5>
-  <p>Margin collapse occurs when <b>top and bottom margins of adjacent block-level elements collide to share a general margin space</b>.<br>The size of this shared space is dictated by the <b>element with the larger margin</b>.</p>
-  <p>Margin collapse does not apply to left and rightg margins, floating and absolutely positioned elements.</p>
-  <p>Explore more&mdash; <a href="https://www.w3schools.com/css/css_margin_collapse.asp" target="_blank" rel="noopener">w3schools.com</a></p>
-  <hr>
-  <h5>Shorthand properties</h5>
-  <p>Use the sequence <em style="color:darkorange; font-weight: bold;">TRBL (TRouBLe, clockwise)</em> to specify values for the block sides; applies to properties <code>margin</code> and <code>padding</code>.</p>
-  <dl class="row">
-    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T R B L;</span></dt>
-    <dd class="col-sm-3">margin: 4px 10px 5px 2px;</dd>
-    <dd class="col-sm-7">margin-top: 4px; margin-right 10px; margin-bottom: 5px; margin-left: 2px;</dd>
-    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T L/R B;</span></dt>
-    <dd class="col-sm-3">margin: 5px 10px 2px;</dd>
-    <dd class="col-sm-7">margin-top: 5px; margin-right 10px; margin-bottom: 2px; margin-left: 10px;</dd>
-    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T/B L/R;</span></dt>
-    <dd class="col-sm-3">margin: 3px 5px;</dd>
-    <dd class="col-sm-7">margin-top: 3px; margin-right 5px; margin-bottom: 3px; margin-left: 5px;</dd>
-    <dt class="col-sm-2">margin: <span style="color:darkorange; font-weight: bold;">T/R/B/L;</span></dt>
-    <dd class="col-sm-3">margin: 8px;</dd>
-    <dd class="col-sm-7">margin-top: 8px; margin-right 8px; margin-bottom: 8px; margin-left: 8px;</dd>
-  </dl>
-  <p>There are other shorthand properties, such as <code>border</code>, <code>outline</code>, <code>font</code>, <code>background</code>, etc.</p>
-  <hr>
-  <h5>Inline vs. block behaviour</h5>
-  <p>The display property specifies the display behavior (the type of rendering box) of an element. In HTML, the default display property value is taken from the HTML specifications or from the browser and user default style sheet.</p>
-  <dl class="row">
-  <dt class="col-sm-2">inline</dt>
-  <dd class="col-sm-10">Displays an element as an inline element (like &lt;span&gt;). Any height and width properties will have no effect</dd>
-  <dt class="col-sm-2">block</dt>
-  <dd class="col-sm-10">Displays an element as a block element (like &lt;p&gt;). It starts on a new line, and takes up the whole width</dd>
-  </dl>
-  <footer>Explore more&mdash; <a href="https://www.w3schools.com/cssref/pr_class_display.asp" target="_blank" rel="noopener">w3schools.com</a></footer>
+    &lt;body&gt;
+      Root element font-size 16px.
+      &lt;p&gt;These paragraphs have font-size 32px.&lt;/p&gt;
+      &lt;p&gt;These paragraphs have font-size 32px.&lt;/p&gt;
+      &lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;/div&gt;
+      &lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;br&gt;
+      &lt;span&gt;The span element inside the div element has a font-size of &lt;strong&gt;0.5em&lt;/strong&gt;, 
+      which equals to &lt;strong&gt;0.5 x element font size&lt;/strong&gt; (32px) = 16px.&lt;/span&gt;&lt;/div&gt;
+      Root element font-size 16px.
+      &lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;br&gt;
+      &lt;span class='half'&gt;The span element inside the div element has a font-size of &lt;strong&gt;1rem&lt;/strong&gt;, 
+      which equals to &lt;strong&gt;1 x root element font size&lt;/strong&gt; (16px) = 16px.&lt;/span&gt;&lt;/div&gt;
+      Root element font-size 16px.
+      &lt;section&gt;This section has &lt;strong&gt;200%&lt;/strong&gt; (twice font size of &lt;strong&gt;parent element&lt;/strong&gt; - html 16px ) = 32px;
+      &lt;br&gt;&lt;span style='font-size: 50%;'&gt;The span element inside the section element has a font-size of &lt;strong&gt;50%&lt;/strong&gt;, which equals to &lt;strong&gt;0.5 x parent element font size&lt;/strong&gt; (32px) = 16px.&lt;/span&gt;
+      Root element font-size 16px.
+    &lt;/body&gt;
   
+  </code></pre>
+</figure>
+<iframe style="width: 100%; height: 560px; border: 1px dotted blue;" srcdoc=
+"&lt;style&gt;
+html { font-size: 16px; color: blue; }
+p { font-size: 32px; color: rgb(224, 97, 0); }
+div {
+  font-size: 2em; color:rgb(224, 97, 0);
+  border: 1px solid black;
+}
+span { font-size: 0.5em; color: blue;}
+.half { font-size: 1rem; }
+section { font-size: 200%; color:rgb(224, 97, 0); border: 1px solid; }
+&lt;/style&gt;
+
+&lt;body&gt;
+Root element font-size 16px.
+&lt;p&gt;These paragraphs have font-size 32px.&lt;/p&gt;
+&lt;p&gt;These paragraphs have font-size 32px.&lt;/p&gt;
+&lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;/div&gt;
+&lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;br&gt;&lt;span&gt;The span element inside the div element has a font-size of &lt;strong&gt;0.5em&lt;/strong&gt;, which equals to &lt;strong&gt;0.5 x element font size&lt;/strong&gt; (32px) = 16px.&lt;/span&gt;&lt;/div&gt;
+Root element font-size 16px.
+&lt;div&gt;This div has &lt;strong&gt;2em&lt;/strong&gt; (&lt;strong&gt;2 x element font size&lt;/strong&gt; 16px = 32px)&lt;br&gt;&lt;span class='half'&gt;The span element inside the div element has a font-size of &lt;strong&gt;1rem&lt;/strong&gt;, which equals to &lt;strong&gt;1 x root element font size&lt;/strong&gt; (16px) = 16px.&lt;/span&gt;&lt;/div&gt;
+Root element font-size 16px.
+&lt;section&gt;This section has &lt;strong&gt;200%&lt;/strong&gt; (twice font size of &lt;strong&gt;parent element&lt;/strong&gt; - html 16px ) = 32px;
+&lt;br&gt;&lt;span style='font-size: 50%;'&gt;The span element inside the section element has a font-size of &lt;strong&gt;50%&lt;/strong&gt;, which equals to &lt;strong&gt;0.5 x parent element font size&lt;/strong&gt; (32px) = 16px.&lt;/span&gt;
+Root element font-size 16px.
+&lt;/body&gt;
+"></iframe>
+<figcaption>CSS units.</figcaption><hr>
 </section>
-<hr /><footer class="container">
+<!-- 
+  ** *******************************************
+  ** Footer
+  ** *******************************************
+--><footer class="container">
 <div class="xsmall fa fa-copyright" style="padding: 1% 13%; text-align: center;"><em>This work is the intellectual property of Sheridan College. Any further copying and distribution outside of class must be within the copyright law. Posting to commercial sites for profit is prohibited.</em></div>
 <address style="text-align: center;">SYST10049 Web Programming |&nbsp;Sheridan College</address></footer></main><!-- Optional JavaScript -->
 <p></p>
@@ -241,9 +247,10 @@ img { width: 70%; }
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
-    hljs.highlightBlock(block); 
+    hljs.highlightBlock(block);
   });
 });
+
 (function () {
   'use strict'
 
